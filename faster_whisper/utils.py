@@ -4,7 +4,7 @@ import re
 
 from typing import List, Optional
 
-import huggingface_hub
+#import huggingface_hub
 import requests
 
 from tqdm.auto import tqdm
@@ -100,6 +100,9 @@ def download_model(
     if cache_dir is not None:
         kwargs["cache_dir"] = cache_dir
 
+    raise NotImplementedError("Attempted to download Faster Whisper model from Hugging Face")
+
+    '''
     try:
         return huggingface_hub.snapshot_download(repo_id, **kwargs)
     except (
@@ -118,6 +121,7 @@ def download_model(
 
         kwargs["local_files_only"] = True
         return huggingface_hub.snapshot_download(repo_id, **kwargs)
+    '''
 
 
 def format_timestamp(
