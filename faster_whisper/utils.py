@@ -7,7 +7,7 @@ from typing import List, Optional
 #import huggingface_hub
 #import requests
 
-from tqdm.auto import tqdm
+#from tqdm.auto import tqdm
 
 _MODELS = {
     "tiny.en": "Systran/faster-whisper-tiny.en",
@@ -69,6 +69,10 @@ def download_model(
     Raises:
       ValueError: if the model size is invalid.
     """
+
+    raise NotImplementedError("Attempted to download Faster Whisper model from Hugging Face")
+
+    '''    
     if re.match(r".*/.*", size_or_id):
         repo_id = size_or_id
     else:
@@ -100,9 +104,7 @@ def download_model(
     if cache_dir is not None:
         kwargs["cache_dir"] = cache_dir
 
-    raise NotImplementedError("Attempted to download Faster Whisper model from Hugging Face")
 
-    '''
     try:
         return huggingface_hub.snapshot_download(repo_id, **kwargs)
     except (
@@ -147,10 +149,12 @@ def format_timestamp(
     )
 
 
+'''
 class disabled_tqdm(tqdm):
     def __init__(self, *args, **kwargs):
         kwargs["disable"] = True
         super().__init__(*args, **kwargs)
+'''
 
 
 def get_end(segments: List[dict]) -> Optional[float]:
