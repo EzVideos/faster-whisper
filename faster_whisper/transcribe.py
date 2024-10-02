@@ -36,7 +36,6 @@ from faster_whisper.utils import (
 #    merge_chunks,
 #)
 
-
 class Word(NamedTuple):
     start: float
     end: float
@@ -97,7 +96,7 @@ class TranscriptionInfo(NamedTuple):
     duration_after_vad: float
     all_language_probs: Optional[List[Tuple[str, float]]]
     transcription_options: TranscriptionOptions
-    vad_options: VadOptions
+    #vad_options: VadOptions
 
 
 # The code below is originally from HF pipeline and is used in whisper-x
@@ -739,7 +738,7 @@ class WhisperModel:
         multilingual: bool = False,
         output_language: Optional[str] = None,
         vad_filter: bool = False,
-        vad_parameters: Optional[Union[dict, VadOptions]] = None,
+        vad_parameters = None,#: Optional[Union[dict, VadOptions]] = None,
         max_new_tokens: Optional[int] = None,
         chunk_length: Optional[int] = None,
         clip_timestamps: Union[str, List[float]] = "0",
