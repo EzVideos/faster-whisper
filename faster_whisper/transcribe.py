@@ -14,8 +14,8 @@ import numpy as np
 import tokenizers
 import torch
 
-from pyannote.audio import Model
-from tqdm import tqdm
+#from pyannote.audio import Model
+#from tqdm import tqdm
 
 from faster_whisper.audio import decode_audio, pad_or_trim
 from faster_whisper.feature_extractor import FeatureExtractor
