@@ -27,14 +27,14 @@ from faster_whisper.utils import (
     get_end,
     get_logger,
 )
-from faster_whisper.vad import (
-    SpeechTimestampsMap,
-    VadOptions,
-    VoiceActivitySegmentation,
-    collect_chunks,
-    get_speech_timestamps,
-    merge_chunks,
-)
+#from faster_whisper.vad import (
+#    SpeechTimestampsMap,
+#    VadOptions,
+#    VoiceActivitySegmentation,
+#    collect_chunks,
+#    get_speech_timestamps,
+#    merge_chunks,
+#)
 
 
 class Word(NamedTuple):
